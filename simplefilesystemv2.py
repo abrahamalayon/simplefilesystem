@@ -111,7 +111,8 @@ def writefile():
     # Log the action
     username = subprocess.check_output(['whoami']).decode('utf-8').strip()
     action = "wrote to a file"
-    logwrite(username, action, filename)
+    blank1 = " "
+    logwrite(username, action, filename, blank1)
 
 def deletefile():
     print()
@@ -123,7 +124,8 @@ def deletefile():
     # Log the action
     username = subprocess.check_output(['whoami']).decode('utf-8').strip()
     action = "deleted a file"
-    logwrite(username, action, filename)
+    blank1 = " "
+    logwrite(username, action, filename, blank1)
 
 def renamefile():
     print()
@@ -137,7 +139,8 @@ def renamefile():
     # Log the action
     username = subprocess.check_output(['whoami']).decode('utf-8').strip()
     action = "renamed a file"
-    logwrite(username, action, f"{filename1} to {filename2}")
+    blank1 = " "
+    logwrite(username, action, f"{filename1} to {filename2}", blank1)
 
 def copyfile():
     print()
@@ -151,7 +154,8 @@ def copyfile():
     # Log the action
     username = subprocess.check_output(['whoami']).decode('utf-8').strip()
     action = "copied a file"
-    logwrite(username, action, f"{filename} to {destination}")
+    blank1 = " "
+    logwrite(username, action, f"{filename} to {destination}", blank1)
 
 def changedir():
     directoryvar = input("Enter the path or name of a directory you want to change to: ")
@@ -162,7 +166,8 @@ def changedir():
     # Log the action
     username = subprocess.check_output(['whoami']).decode('utf-8').strip()
     action = "changed current directory"
-    logwrite(username, action, directoryvar)
+    blank1 = " "
+    logwrite(username, action, directoryvar, blank1)
 
 def makedirectory():
     newdir = input("Enter the path or directory name you wish to create: ")
@@ -173,7 +178,8 @@ def makedirectory():
     username = subprocess.check_output(['whoami']).decode('utf-8').strip()
     action = "created a directory"
     current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    logwrite(username, action, f"{current_time} - {newdir}")
+    blank1 = " "
+    logwrite(username, action, f"{current_time} - {newdir}", blank1)
 
 def viewlogs():
     # Log the action
