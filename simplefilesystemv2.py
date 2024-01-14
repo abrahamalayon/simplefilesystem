@@ -200,6 +200,8 @@ def ldapquery():
     port = int(input("Enter the LDAP server port: "))
     username = input("Enter the LDAP username: ")
     password = getpass.getpass("Enter the LDAP password: ")
+    search_base = input("Enter the search base: ")
+    search_filter = input("Enter the search filter: ")
 
     # Create an LDAP connection
     if port == 636:
@@ -216,7 +218,11 @@ def ldapquery():
         print("Successfully connected to the LDAP server.")
         
         # Perform LDAP query
-        # ...
+        conn.search(search_base, search_filter, attributes=ldap3.ALL_ATTRIBUTES)
+        
+        # Print the results
+        for entry in conn.entries:
+            print(entry)
         
         # Unbind from the LDAP server
         conn.unbind()
