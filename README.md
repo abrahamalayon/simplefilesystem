@@ -5,7 +5,7 @@ A Python script that manipulates the Linux file system and an LDAP Server. (A wo
 
 ## Description
 
-SimpleFileSystem creates, modifies, and deletes files and directories on your Linux file system. You can also navigate through the file system and read files, rename, and copy files. In addition the script allows you to authenticate to, query and download files from an LDAP server using commands such as ldapsearch, ldapdownload, etc. It writes a log in the /var/log directory.  In the current version, traffic to and from LDAP is unencrypted. This script will make changes to your system (i.e delete files, create files) so be careful.
+SimpleFileSystem creates, modifies, and deletes files and directories on your Linux file system. You can also navigate through the file system and read files, rename, and copy files. In addition the script allows you to authenticate to, query and download files from an LDAP server using commands such as ldapsearch, ldapdownload, etc. It writes a log in the /var/log directory.  SimpleFileSystem can you port 636 (TLS) or port 389 with LDAP. This script will make changes to your system (i.e delete files, create files) so be careful.
 
 The purpose behind the program is to use a script to execute file system commands on the operating system (as if the user does not know Linux) as well as downloading from servers. The traffic is unencrypted to allow observation of packets with Wireshark. The next phase is to add support for LDAPS, add the find function in Linux, and modify the script so only the log function has to run as superuser. Creating a GUI interface is also in the works.
 
