@@ -234,8 +234,8 @@ def ldapquery():
 
 def downloadfile():
     # Get user input for LDAP server details
-    server = input("Enter the LDAP server address: ")
-    port = int(input("Enter the LDAP server port: "))
+    server_address = input("Enter the LDAP server address: ")
+    server_port = int(input("Enter the LDAP server port: "))
     username = input("Enter the LDAP username: ")
     password = getpass.getpass("Enter the LDAP password: ")
     file_dn = input("Enter the DN (Distinguished Name) of the file to download: ")
@@ -245,14 +245,14 @@ def downloadfile():
     if port == 636:
         # Use SSL/TLS encrypted connection
         tls_configuration = ldap3.Tls(validate=ssl.CERT_REQUIRED)
-        server = ldap3.Server(server, port=port, use_ssl=True, tls=tls_configuration)
+        server = ldap3.Server(server_address, port=server_port, use_ssl=True, tls=tls_configuration)
     else:
         # Use unencrypted connection
-        server = ldap3.Server(server, port=port)
+        server = ldap3.Server(server_address, port=server_port)
 
         # Bind to the LDAP server
         try:
-            conn = ldap3.Connection(server, user=username, password=password, auto_bind=True)
+            conn = ldap3.Connection(server_address, user=username, password=password, auto_bind=True)
             print("Successfully connected to the LDAP server.")
 
             # Download the file
