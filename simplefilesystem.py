@@ -242,7 +242,7 @@ def downloadfile():
     file_path = input("Enter the local path to save the downloaded file: ")
 
     # Create an LDAP connection
-    if port == 636:
+    if server_port == 636:
         # Use SSL/TLS encrypted connection
         tls_configuration = ldap3.Tls(validate=ssl.CERT_REQUIRED)
         server = ldap3.Server(server_address, port=server_port, use_ssl=True, tls=tls_configuration)
