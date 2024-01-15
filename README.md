@@ -17,7 +17,7 @@ To install and run this program, you need to have Python 3 installed on your sys
 git clone https://github.com/abrahamalayon/simplefilesystem.git
 ```
 
-Then, you need to run the program with sudo privileges, as it needs to access the system files and directories. You can do that by executing the file_system6.py file:
+Then, you need to run the program with sudo privileges, as it needs to access the system files and directories. You can do that by executing the simplefilesystemv2.py file:
 
 ```bash
 sudo python3 simplefilesystemv2.py
