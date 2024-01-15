@@ -14,13 +14,13 @@ The purpose behind the program is to use a script to execute file system command
 To install and run this program, you need to have Python 3 installed on your system. You can download Python 3 from [here]. You also need to clone this repository to your local machine using the following command:
 
 ```bash
-git clone https://github.com/abrahamalayon/project1.git
+git clone https://github.com/abrahamalayon/simplefilesystem.git
 ```
 
 Then, you need to run the program with sudo privileges, as it needs to access the system files and directories. You can do that by executing the file_system6.py file:
 
 ```bash
-sudo python3 file_system6.py
+sudo python3 simplefilesystemv2.py
 ```
 
 ## Usage
