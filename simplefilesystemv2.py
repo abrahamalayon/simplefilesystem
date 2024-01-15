@@ -195,26 +195,27 @@ def viewlogs():
  
 
 def ldapquery():
+
     # Get user input for LDAP server details
-    server = input("Enter the LDAP server address: ")
-    port = int(input("Enter the LDAP server port: "))
+    server_address = input("Enter the LDAP server address: ")
+    server_port = int(input("Enter the LDAP server port: "))
     username = input("Enter the LDAP username: ")
     password = getpass.getpass("Enter the LDAP password: ")
     search_base = input("Enter the search base: ")
     search_filter = input("Enter the search filter: ")
 
     # Create an LDAP connection
-    if port == 636:
+    if server_port == 636:
         # Use SSL/TLS encrypted connection
         tls_configuration = ldap3.Tls(validate=ssl.CERT_REQUIRED)
-        server = ldap3.Server(server, port=port, use_ssl=True, tls=tls_configuration)
+        server = ldap3.Server(server_address, port=server_port, use_ssl=True, tls=tls_configuration)
     else:
         # Use unencrypted connection
-        server = ldap3.Server(server, port=port)
+        server = ldap3.Server(server_address, port=server_port)
 
     # Bind to the LDAP server
     try:
-        conn = ldap3.Connection(server, user=username, password=password, auto_bind=True)
+        conn = ldap3.Connection(server_address, user=username, password=password, auto_bind=True)
         print("Successfully connected to the LDAP server.")
         
         # Perform LDAP query
@@ -229,6 +230,7 @@ def ldapquery():
         print("Disconnected from the LDAP server.")
     except ldap3.core.exceptions.LDAPException as e:
         print("Failed to connect to the LDAP server:", str(e))
+
 
 def downloadfile():
     # Get user input for LDAP server details
