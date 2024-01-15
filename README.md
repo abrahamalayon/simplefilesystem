@@ -11,6 +11,8 @@ The purpose behind the program is to use a script to execute file system command
 
 ## Installation
 
+Note:  The file name is simplefilesystemv2.py, which is different from the repository name.
+
 To install and run this program, you need to have Python 3 installed on your system. You can download Python 3 from [here]. You also need to clone this repository to your local machine using the following command:
 
 ```bash
